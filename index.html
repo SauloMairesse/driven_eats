@@ -19,7 +19,7 @@
     <main>
         <section id="pratos">
             <h1>Primeiro, seu prato</h1>
-            <div class="escolhas">
+            <div id="prato" class="escolhas">
                 <div class="escolha" onclick="selecionarOpcao(this, 'pratos')">
                     <img src="arquivosImagens/prato1.png" alt="">
                     <h2>Prato Feito</h2>
@@ -42,20 +42,20 @@
         </section>
         <section id="bebidas">
             <h1>Agora, sua bebida</h1>
-            <div class="escolhas">
-                <div class="escolha">
+            <div id="bebida" class="escolhas">
+                <div class="escolha" onclick="selecionarOpcao(this, 'bebidas')">
                     <img src="arquivosImagens/bebida1.png" alt="">
                     <h2>Guaraná</h2>
                     <h3>Lata 350ml</h3>
                     <h4>R$ 4,90</h4>
                 </div>
-                <div class="escolha">
+                <div class="escolha" onclick="selecionarOpcao(this, 'bebidas')">
                     <img src="arquivosImagens/bebida2.png" alt="">
                     <h2>Estella</h2>
                     <h3>lata 310ml</h3>
                     <h4>R$ 4,90</h4>
                 </div>
-                <div class="escolha">
+                <div class="escolha" onclick="selecionarOpcao(this, 'bebidas')">
                     <img src="arquivosImagens/bebida3.png" alt="">
                     <h2>Suco de Laraja</h2>
                     <h3>350ml</h3>
@@ -65,20 +65,20 @@
         </section>
         <section id="sobremesas">
             <h1>Por fim, sua sobremesa</h1>
-            <div class="escolhas">
-                <div class="escolha">
+            <div id="sobremesa" class="escolhas">
+                <div class="escolha" onclick="selecionarOpcao(this, 'sobremesas')">
                     <img src="arquivosImagens/sobremesa1.png" alt="">
                     <h2>Brigadeiro</h2>
                     <h3>3 Brigadeiros Tradicionais</h3>
                     <h4>R$ 3,90</h4>
                 </div>
-                <div class="escolha">
+                <div class="escolha" onclick="selecionarOpcao(this, 'sobremesas')">
                     <img src="arquivosImagens/sobremesa2.png" alt="">
                     <h2>Brownie</h2>
                     <h3>Bolo Brownie de Chocolate</h3>
                     <h4>R$ 3,90</h4>
                 </div>
-                <div class="escolha">
+                <div class="escolha" onclick="selecionarOpcao(this, 'sobremesas')">
                     <img src="arquivosImagens/sobremesa3.png" alt="">
                     <h2>Cookies</h2>
                     <h3>3 Cookies, baunilha e chocolate</h3>
@@ -88,8 +88,8 @@
         </section>
     </main>
     <footer>
-        <div><h5>Selecione os 3 itens
-            para fechar o pedido</h5></div>
+        <button><h5>Selecione os 3 itens
+            para fechar o pedido</h5></button>
     </footer>
 </body>
 

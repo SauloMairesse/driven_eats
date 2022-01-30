@@ -131,7 +131,7 @@ footer{
     z-index: 10;
     padding: 0 25px 0 25px;
 }
-footer div{
+footer button{
     display: flex;
     height: 61px;
     width: 364px;
@@ -140,6 +140,7 @@ footer div{
     align-items: center;
     justify-content: center;
     padding: 0 65px 0 65px;
+    cursor: pointer;
 }
 footer h5{
     font-family: Roboto;
@@ -153,4 +154,7 @@ footer h5{
 }
 .bordaEicone{
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+}
+.botaoAtivo{
+    background-color: #32B72F;
 }
