@@ -1,8 +1,7 @@
-let listaNome = [];
+let mensagem = String();
 function selecionarEscolha(escolha,section){
     const escolhaSelecionada = document.querySelector(`.${section} .bordaEicone`);
     const icone = document.querySelector(`.${section} .bordaEicone .icone`);
-    console.log(icone)
     if(escolhaSelecionada !== null && escolhaSelecionada !== escolha){
         escolhaSelecionada.classList.remove('bordaEicone')
     }
@@ -10,18 +9,6 @@ function selecionarEscolha(escolha,section){
     finalizarPedido();
 }
 
-// // DEIXAR COM BORDA
-// function selecionarOpcao(escolha, section){
-//     const opcaoSelecionada = document.querySelector(`#${section} .bordaEicone`);
-//     console.log(opcaoSelecionada);
-//     if(opcaoSelecionada !== null && opcaoSelecionada !== escolha){
-//         opcaoSelecionada.classList.remove('bordaEicone');
-//     }
-//     escolha.classList.toggle('bordaEicone');
-//     confirmarPedido();
-// }
-
-//DEIXAR O BOTAO DE CONFIRMAR VERDE
 function finalizarPedido(){    
     const finalizarPedido = document.querySelector('footer button');
     const finalizarTexto = document.querySelector('.finalizarPedido');
@@ -34,13 +21,34 @@ function finalizarPedido(){
     if(prato != null && bebida != null && sobremesa != null){
         finalizarPedido.classList.add('botaoAtivo'); 
         finalizarTexto.innerHTML='Finalizar Pedido';
-        criarlink.setAttribute("target","_blank");
-        criarlink.setAttribute("href", `https://wa.me/5563999143014?text=PUTAMERDA`);
     }
     else {
         finalizarPedido.classList.remove('botaoAtivo')
         finalizarTexto.innerHTML='Selecione os 3 itens para fechar o pedido';
-        criarlink.removeAttribute("target");
-        criarlink.removeAttribute("href")
     }
+}
+
+function formatarTexto(){
+    const nomePrato = document.querySelector('.bordaEicone .nomePrato').innerHTML;
+    const precoPrato =  parseFloat(document.querySelector('.bordaEicone .precoPrato').innerHTML.replace(',','.'));
+    const nomeBebida = document.querySelector('.bordaEicone .nomeBebida').innerHTML;
+    const precoBebida =  parseFloat(document.querySelector('.bordaEicone .precoBebida').innerHTML.replace(',','.'));
+    const nomeSobremesa = document.querySelector('.bordaEicone .nomeSobremesa').innerHTML;
+    const precoSobremesa = parseFloat(document.querySelector('.bordaEicone .precoSobremesa').innerHTML.replace(',','.'));
+
+    console.log(nomePrato)
+    console.log(precoPrato)
+    console.log(nomeBebida)
+    console.log(precoBebida)
+    console.log(nomeSobremesa)
+    console.log(precoSobremesa)
+
+    const preMensagem = ('Olá, gostaria de fazer o pedido:'
+    + `\n - Prato: ${nomePrato}`
+    + `\n - Bebida: ${nomeBebida}`
+    + `\n - Sobremesa: ${nomeSobremesa}`
+    + `\n - Total: R$: ${(precoPrato + precoBebida + precoSobremesa).toFixed(2)}`);
+
+    const url = 'https://wa.me/556399143014?text=' + encodeURIComponent(preMensagem);
+    window.open(url,'_blank')
 }
