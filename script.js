@@ -20,7 +20,7 @@ function finalizarPedido(){
 
     if(prato != null && bebida != null && sobremesa != null){
         finalizarPedido.classList.add('botaoAtivo'); 
-        finalizarTexto.innerHTML='Finalizar Pedido';
+        finalizarTexto.innerHTML='Fechar pedido';
     }
     else {
         finalizarPedido.classList.remove('botaoAtivo')
@@ -35,13 +35,6 @@ function formatarTexto(){
     const precoBebida =  parseFloat(document.querySelector('.bordaEicone .precoBebida').innerHTML.replace(',','.'));
     const nomeSobremesa = document.querySelector('.bordaEicone .nomeSobremesa').innerHTML;
     const precoSobremesa = parseFloat(document.querySelector('.bordaEicone .precoSobremesa').innerHTML.replace(',','.'));
-
-    console.log(nomePrato)
-    console.log(precoPrato)
-    console.log(nomeBebida)
-    console.log(precoBebida)
-    console.log(nomeSobremesa)
-    console.log(precoSobremesa)
 
     const preMensagem = ('Olá, gostaria de fazer o pedido:'
     + `\n - Prato: ${nomePrato}`
